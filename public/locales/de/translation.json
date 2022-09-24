@@ -1,0 +1,35 @@
+{
+    "form": {
+        "greeting": "Hallo!",
+        "welcome": "Willkommen beim Spiel Tic-Tac-Toe",
+        "label": "Wie heißen Sie?",
+        "placeholder": "Gib deinen Namen ein",
+        "button": "Starte das Spiel!"
+    },
+    "transitional": {
+        "title": "Schön, dich kennenzulernen, {{ userName }}!",
+        "chooseLevel": "Wählen Sie den Schwierigkeitsgrad:",
+        "chooseWhoStarts": "Möchten Sie das Spiel starten oder dem Computer Quoten geben?",
+        "button1": "Ich will starten",
+        "button2": "Lassen Sie den Computer beginnen!"
+    },
+    "game": {
+        "title": "Viel Spaß!",
+        "computerName": "COMPUTER",
+        "reset": "Aktualisierung"
+    },
+    "reset": {
+        "title": "Lass uns weiterspielen!",
+        "chooseLevel": "Wählen Sie den Schwierigkeitsgrad:",
+        "chooseWhoStarts": "Möchten Sie das Spiel starten oder den Computer starten lassen?",
+        "button1": "Ich fange an",
+        "button2": "Lassen Sie den Computer beginnen!"
+    },
+    "modal": {
+        "titleWin": "Herzliche Glückwünsche!",
+        "titleLoss": "Mach dir keine Sorgen!",
+        "messageWin": "Du hast wirklich Glück!",
+        "messageLoss": "Versuchen Sie es nochmal! Es wird Ihnen bestimmt gelingen!",
+        "again": "Nochmal abspielen!"
+    }
+}

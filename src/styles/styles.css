@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Plush";
+  src: local("Plush"), url("./fonts/Plush.ttf") format("truetype");
+  font-weight: normal;
+}
+
+.cell {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 0;
+}
+
+.cell-img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.player-img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.resetBtn {
+  width: 15rem;
+}
+
+.logo {
+  font-family: "Plush";
+}
