@@ -114,7 +114,7 @@ function GameComponent() {
           </div>
           <PlayersComponent />
           <div className="d-flex flex-column align-items-center">
-            <div className="col-10 col-sm-10 col-xl-8 d-flex flex-column align-items-center">
+            <div className="col-12 col-sm-12 col-xl-8 d-flex flex-column align-items-center">
               <Card className="shadow card-cell mb-4">
                 {tableBuilder(field)}
               </Card>
