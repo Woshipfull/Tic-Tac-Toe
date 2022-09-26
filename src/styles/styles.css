@@ -10,6 +10,10 @@
   border-radius: 0;
 }
 
+.card-cell {
+  border-radius: 0;
+}
+
 .cell-img {
   height: 3rem;
   width: 3rem;

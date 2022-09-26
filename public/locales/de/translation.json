@@ -28,6 +28,8 @@
     "modal": {
         "titleWin": "Herzliche Glückwünsche!",
         "titleLoss": "Mach dir keine Sorgen!",
+        "titleDraw": "Wow! Gleichstand!",
+        "messageDraw": "Lass uns noch ein bisschen spielen!",
         "messageWin": "Du hast wirklich Glück!",
         "messageLoss": "Versuchen Sie es nochmal! Es wird Ihnen bestimmt gelingen!",
         "again": "Nochmal abspielen!"

@@ -28,6 +28,8 @@
     "modal": {
         "titleWin": "Congratulations!",
         "titleLoss": "Don't worry!",
+        "titleDraw": "Wow! A draw!",
+        "messageDraw": "Let's play some more!",
         "messageWin": "You are truly lucky!",
         "messageLoss": "Try again! You will definitely succeed!",
         "again": "Play again"

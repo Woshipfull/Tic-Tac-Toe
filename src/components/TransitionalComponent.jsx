@@ -36,9 +36,9 @@ function Transitional() {
 
   return (
     <Card className="shadow-sm">
-      <Card.Body className="p-5">
+      <Card.Body className="px-3 py-5">
         <div className="text-center mb-3">
-          <h1>{t(`${currentState}.title`, { userName })}</h1>
+          <h1 className="h2">{t(`${currentState}.title`, { userName })}</h1>
         </div>
         <div className="d-flex flex-column align-items-center mb-3">
           <div className="col-12 col-sm-12 col-xl-10 text-center">

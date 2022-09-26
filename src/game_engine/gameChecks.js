@@ -20,4 +20,6 @@ const isWinner = (field, type) => {
     return false;
 };
 
-export default isWinner;
+const isGameOver = (field) => !field.flat().some((v) => v === null);
+
+export { isWinner, isGameOver };

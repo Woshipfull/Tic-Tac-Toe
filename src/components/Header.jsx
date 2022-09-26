@@ -7,6 +7,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
+import LogoComponent from "./LogoComponent.jsx";
+
 const lngs = {
   en: "En",
   de: "De",
@@ -44,19 +46,7 @@ function Header() {
   return (
     <Navbar bg="white" className="shadow-sm">
       <Container>
-        <div className="logo d-flex mt-2" onClick={handleClick}>
-          <span className="h2 m-0 text-success">T</span>
-          <span className="h3 m-0 text-danger">i</span>
-          <span className="h3 m-0 text-info">c</span>
-          <span className="h3 m-0 text-success">-</span>
-          <span className="h3 m-0 text-danger">T</span>
-          <span className="h3 m-0 text-info">a</span>
-          <span className="h3 m-0 text-success">c</span>
-          <span className="h3 m-0 text-danger">-</span>
-          <span className="h3 m-0 text-info">T</span>
-          <span className="h3 m-0 text-success">o</span>
-          <span className="h3 m-0 text-danger">e</span>
-        </div>
+        <LogoComponent clickHangle={handleClick} />
         <ButtonGroup size="sm ml-5">{lngsBtnsRender()}</ButtonGroup>
       </Container>
     </Navbar>

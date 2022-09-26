@@ -36,7 +36,7 @@ function StartForm() {
 
   return (
     <Card className="shadow-sm">
-      <Card.Body className="p-5">
+      <Card.Body className="px-3 py-5">
         <div className="text-center mb-5">
           <h1>{t("form.greeting")}</h1>
           <p className="h5">{t("form.welcome")}</p>
