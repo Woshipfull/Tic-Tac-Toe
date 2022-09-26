@@ -44,7 +44,7 @@ function Header() {
     });
 
   return (
-    <Navbar bg="white" className="shadow-sm">
+    <Navbar bg="white" className="shadow-sm mb-2">
       <Container>
         <LogoComponent clickHangle={handleClick} />
         <ButtonGroup size="sm ml-5">{lngsBtnsRender()}</ButtonGroup>

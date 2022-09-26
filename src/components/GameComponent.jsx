@@ -107,7 +107,7 @@ function GameComponent() {
         type={"userLoss"}
       />
       <MyModal show={drawModalShow} clickHandle={handleReset} type={"draw"} />
-      <Card className="shadow-sm">
+      <Card className="shadow-sm mb-2">
         <Card.Body className="px-1 py-5">
           <div className="text-center mb-3">
             <h1 className="">{t("game.title")}</h1>
