@@ -1,19 +1,28 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
-import xIcon from "../styles/images/x.png";
-import oIcon from "../styles/images/o.png";
+import xIcon from '../styles/images/x.png';
+import oIcon from '../styles/images/o.png';
 
-function PlayersComponent() {
-  const state = useSelector((state) => state.appState);
+type AppStoreState = {
+  currentState: string;
+  userName: string;
+  starts: string;
+  level: string;
+};
+
+type Store = { appState: AppStoreState };
+
+const PlayersComponent = () => {
+  const state = useSelector((state: Store) => state.appState);
   const { t } = useTranslation();
 
-  const aiName = t("game.computerName");
+  const aiName = t('game.computerName');
   const userName = state.userName;
 
   const players =
-    state.starts === "user"
+    state.starts === 'user'
       ? { first: userName, second: aiName }
       : { first: aiName, second: userName };
 
@@ -30,6 +39,6 @@ function PlayersComponent() {
       </div>
     </div>
   );
-}
+};
 
 export default PlayersComponent;

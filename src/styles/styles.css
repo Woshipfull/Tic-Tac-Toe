@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Plush";
-  src: local("Plush"), url("./fonts/Plush.ttf") format("truetype");
+  font-family: 'Plush';
+  src: local('Plush'), url('./fonts/Plush.ttf') format('truetype');
   font-weight: normal;
 }
 
@@ -29,5 +29,121 @@
 }
 
 .logo {
-  font-family: "Plush";
+  font-family: 'Plush';
+}
+
+.choose-btns-animation {
+  animation-name: transformAnimation;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
+  animation-play-state: running;
+}
+
+.choose-btns-animation > .btn-outline-info {
+  animation-name: colorAnimations;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
+  animation-play-state: running;
+}
+
+@keyframes transformAnimation {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.02) rotate(0);
+  }
+  35% {
+    transform: scale(1.02) rotate(0.5deg);
+  }
+  45% {
+    transform: scale(1.02) rotate(-0.5deg);
+  }
+  55% {
+    transform: scale(1.02) rotate(0.5deg);
+  }
+  65% {
+    transform: scale(1.02) rotate(-0.5deg);
+  }
+  75% {
+    transform: scale(1.02) rotate(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes colorAnimations {
+  0% {
+    color: #0dcaf0;
+    border-color: #0dcaf0;
+  }
+  25% {
+    color: #dc3545;
+    border-color: #dc3545;
+  }
+  75% {
+    color: #dc3545;
+    border-color: #dc3545;
+  }
+  100% {
+    color: #0dcaf0;
+    border-color: #0dcaf0;
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.spinner:after {
+  content: ' ';
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #6c757d;
+  border-color: #6c757d transparent #6c757d transparent;
+  animation: spinner-rotate 1.2s linear infinite,
+    spinner-color 1.5s linear infinite;
+}
+
+@keyframes spinner-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-color {
+  0% {
+    border-color: #6c757d transparent #6c757d transparent;
+  }
+  50% {
+    border-color: #0dcaf0 transparent #0dcaf0 transparent;
+  }
+  100% {
+    border-color: #6c757d transparent #6c757d transparent;
+  }
+}
+
+.spinner-text {
+  color: #6c757d;
+  animation: spinner-text-color 1.5s linear infinite;
+}
+
+@keyframes spinner-text-color {
+  0% {
+    color: #6c757d;
+  }
+  50% {
+    color: #0dcaf0;
+  }
+  100% {
+    color: #6c757d;
+  }
 }

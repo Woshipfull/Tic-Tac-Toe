@@ -1,36 +1,55 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useTranslation } from "react-i18next";
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
-import { setStarts, setState, setLevel } from "../slices/appStateSlice.js";
+import { Store } from '../slices/types';
+import { setStarts, setState, setLevel } from '../slices/appStateSlice';
+import classNames from 'classnames';
 
-const levelButtons = {
-  easy: "Easy",
-  normal: "Normal",
+interface LevelButtonsType {
+  [name: string]: string;
+}
+
+const levelButtons: LevelButtonsType = {
+  easy: 'Easy',
+  normal: 'Normal',
 };
 
 function Transitional() {
   const { t } = useTranslation();
 
-  const [currentLevel, setCurrentLevel] = useState(null);
-  const { userName, currentState } = useSelector((state) => state.appState);
+  const [currentLevel, setCurrentLevel] = useState<string | null>(null);
+  const { userName, currentState } = useSelector(
+    (state: Store) => state.appState
+  );
   const dispatch = useDispatch();
 
-  const handleLevel = ({ target: { value } }) => setCurrentLevel(value);
+  const [isInvalidCurrentLevel, setIsInvalidCurrentLevel] = useState<
+    boolean | null
+  >(null);
+  const chooseBtnsClass = classNames('w-100', {
+    'choose-btns-animation': isInvalidCurrentLevel,
+  });
 
-  //VALIDATION!!!
+  const stopAnimation = (): void => setIsInvalidCurrentLevel(null);
 
-  const handleClick = (e) => {
-    const { value } = e.target;
+  const handleLevel = (e: React.MouseEvent) => {
+    const { value } = e.target as HTMLButtonElement;
+    setCurrentLevel(value);
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    const { value } = e.target as HTMLButtonElement;
     if (currentLevel === null) {
+      setIsInvalidCurrentLevel(true);
       return;
     }
     dispatch(setStarts(value));
-    dispatch(setState("inGame"));
+    dispatch(setState('inGame'));
     dispatch(setLevel(currentLevel));
   };
 
@@ -43,13 +62,17 @@ function Transitional() {
         <div className="d-flex flex-column align-items-center mb-3">
           <div className="col-12 col-sm-12 col-xl-10 text-center">
             <p>{t(`${currentState}.chooseLevel`)}</p>
-            <ButtonGroup aria-label="chooseLevel" className="w-100" backdrop="static">
+            <ButtonGroup
+              aria-label="chooseLevel"
+              className={chooseBtnsClass}
+              onAnimationEnd={stopAnimation}
+            >
               {Object.keys(levelButtons).map((key) => {
                 if (currentLevel === key) {
                   return (
                     <Button
                       key={key}
-                      className={"active"}
+                      className={'active'}
                       variant="outline-info"
                       onClick={handleLevel}
                       value={key}
